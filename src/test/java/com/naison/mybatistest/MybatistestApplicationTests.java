@@ -46,6 +46,7 @@ class MybatistestApplicationTests {
         list.forEach(e -> System.out.println(e.toString()));
     }
 
+    // i have no idea what's going on...
     @Test
     public void testMapperList() {
         List<User> list = userMapper.listAll();
