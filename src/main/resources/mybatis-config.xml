@@ -4,6 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+
+    <!--put xml config file just for looking-->
+
+
     <settings>
         <setting name="logImpl" value="LOG4J2"/>
         <setting name="cacheEnabled" value="true"/>
@@ -20,4 +24,7 @@
             </dataSource>
         </environment>
     </environments>
+    <mappers>
+        <mapper resource="mapper/UserMapper.xml"/>
+    </mappers>
 </configuration>

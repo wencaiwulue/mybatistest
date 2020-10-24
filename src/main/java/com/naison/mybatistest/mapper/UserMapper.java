@@ -15,5 +15,5 @@ import java.util.List;
 @Repository
 @Mapper
 public interface UserMapper {
-    List<User> listAll(/*@Param(value = "gender") Integer gender*/);
+    List<User> listAll(@Param(value = "gender") Integer gender);
 }

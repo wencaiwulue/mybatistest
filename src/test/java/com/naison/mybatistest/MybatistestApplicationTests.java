@@ -27,12 +27,12 @@ class MybatistestApplicationTests {
     @Autowired
     private SqlSessionFactory sqlSessionFactory;
 
-//    @BeforeEach
-//    public void createTable() throws IOException {
-//        Connection connection = sqlSessionFactory.openSession().getConnection();
-//        ScriptRunner scriptRunner = new ScriptRunner(connection);
-//        scriptRunner.runScript(Resources.getResourceAsReader("create-table-user.sql"));
-//    }
+    @BeforeEach
+    public void createTable() throws IOException {
+        Connection connection = sqlSessionFactory.openSession().getConnection();
+        ScriptRunner scriptRunner = new ScriptRunner(connection);
+        scriptRunner.runScript(Resources.getResourceAsReader("create-table-user-mysql.sql"));
+    }
 
     @Test
     public void testSession() throws SQLException {
@@ -46,10 +46,9 @@ class MybatistestApplicationTests {
         list.forEach(e -> System.out.println(e.toString()));
     }
 
-    // i have no idea what's going on...
     @Test
     public void testMapperList() {
-        List<User> list = userMapper.listAll();
+        List<User> list = userMapper.listAll(0);
         list.forEach(e -> System.out.println(e.toString()));
     }
 
